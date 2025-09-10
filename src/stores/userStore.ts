@@ -118,7 +118,6 @@ const useUserStore = create<UserStoreState>()(
                         errorState: false,
                     });
                 } catch (error: unknown) {
-                    // @ts-ignore -- no type for error
                     if (axios.isAxiosError(error) && error.response?.status === 401) {
                         get().clearToken();
                     }

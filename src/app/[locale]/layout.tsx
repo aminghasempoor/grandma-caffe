@@ -1,9 +1,9 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import "../globals.css";
-import {ThemeProvider} from "@/components/ThemeProvider";
-import {NextIntlClientProvider} from "next-intl";
-import {getMessages} from "next-intl/server";
-import {notFound} from "next/navigation";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 import React from "react";
 import localFont from "next/font/local";
 import DeviceProvider from "@/providers/DeviceProvider";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout(props: LocaleLayoutProps) {
-    const {locale} = await props.params;
+    const { locale } = await props.params;
     let isRtl;
     let messages;
     try {
@@ -42,25 +42,25 @@ export default async function RootLayout(props: LocaleLayoutProps) {
     }
     return (
         <html className={doran.className} lang={locale} dir={isRtl ? "rtl" : "ltr"} suppressHydrationWarning>
-        <body>
-        <NextTopLoader color="#16a795" />
-        <NextIntlClientProvider messages={messages}>
-            <DeviceProvider>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="light"
-                    enableSystem
-                    disableTransitionOnChange
-                    value={{
-                        light: "light",
-                        dark: "dark",
-                    }}
-                >
-                    {props.children}
-                </ThemeProvider>
-            </DeviceProvider>
-        </NextIntlClientProvider>
-        </body>
+            <body>
+                <NextTopLoader color="#16a795" />
+                <NextIntlClientProvider messages={messages}>
+                    <DeviceProvider>
+                        <ThemeProvider
+                            attribute="class"
+                            defaultTheme="light"
+                            enableSystem
+                            disableTransitionOnChange
+                            value={{
+                                light: "light",
+                                dark: "dark",
+                            }}
+                        >
+                            {props.children}
+                        </ThemeProvider>
+                    </DeviceProvider>
+                </NextIntlClientProvider>
+            </body>
         </html>
     );
 }
