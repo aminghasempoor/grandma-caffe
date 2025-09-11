@@ -1,16 +1,16 @@
 import Image from "next/image";
-import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
-import {motion} from "framer-motion";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {Input} from "@/components/ui/input";
-import {Checkbox} from "@/components/ui/checkbox";
-import {Button} from "@/components/ui/button";
-import {LogIn} from "lucide-react";
-import {Variants} from "motion";
-import {useTranslations} from "next-intl";
-import {SubmitHandler, UseFormReturn} from "react-hook-form";
-import {LoginFormType} from "@/components/login/index";
-import {LoginBackGround} from "@/assets";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { LogIn } from "lucide-react";
+import { Variants } from "motion";
+import { useTranslations } from "next-intl";
+import { SubmitHandler, UseFormReturn } from "react-hook-form";
+import { LoginFormType } from "@/components/login/index";
+import { LoginBackGround } from "@/assets";
 
 const cardVariants: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -27,9 +27,9 @@ interface Props {
     onSubmit: SubmitHandler<LoginFormType>;
 }
 
-const LoginContext = ({form, onSubmit} : Props) => {
+const LoginContext = ({ form, onSubmit }: Props) => {
     const t = useTranslations();
-    return(
+    return (
         <div className="relative w-full h-screen">
             <Image
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -135,6 +135,6 @@ const LoginContext = ({form, onSubmit} : Props) => {
                 </Form>
             </div>
         </div>
-    )
-}
+    );
+};
 export default LoginContext;

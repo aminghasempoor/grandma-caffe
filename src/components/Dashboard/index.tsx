@@ -1,8 +1,3 @@
-
 export function DashboardComponent() {
-    return (
-        <>
-            hello
-        </>
-    );
+    return <>hello</>;
 }

@@ -66,4 +66,3 @@ export function getDashboardSidebarItems(t: (key: string) => string) {
         },
     ];
 }
-

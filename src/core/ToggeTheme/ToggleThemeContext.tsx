@@ -5,11 +5,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
-export const ThemeToggleButton3 = ({
-                                       className = "",
-                                   }: {
-    className?: string;
-}) => {
+export const ThemeToggleButton3 = ({ className = "" }: { className?: string }) => {
     const { theme, setTheme } = useTheme();
     const isDark = theme === "dark";
     const handleToggle = () => {
@@ -23,7 +19,7 @@ export const ThemeToggleButton3 = ({
             className={cn(
                 "rounded-full transition-all duration-300 active:scale-95",
                 isDark ? "bg-black text-white" : "bg-white text-black",
-                className,
+                className
             )}
         >
             <svg

@@ -17,7 +17,7 @@ import Link from "next/link";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import SidebarFooterComponent from "./SidebarFooter";
 import { useTranslations } from "next-intl";
-import {getDashboardSidebarItems} from "@/utils/data";
+import { getDashboardSidebarItems } from "@/utils/data";
 
 export function DashboardSidebar() {
     const t = useTranslations("Sidebar");

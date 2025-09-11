@@ -8,7 +8,7 @@ import React from "react";
 import localFont from "next/font/local";
 import DeviceProvider from "@/providers/DeviceProvider";
 import NextTopLoader from "nextjs-toploader";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import InitUser from "@/hooks/InitUser";
 
 const doran = localFont({

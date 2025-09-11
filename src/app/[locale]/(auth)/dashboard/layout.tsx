@@ -33,9 +33,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         // <WithAuthMiddleware>
-            <DashboardLayout>
-                <div className={"px-10"}>{children}</div>
-            </DashboardLayout>
+        <DashboardLayout>
+            <div className={"px-10"}>{children}</div>
+        </DashboardLayout>
         // </WithAuthMiddleware>
     );
 };

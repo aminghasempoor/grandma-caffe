@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import useRequest from "@/hooks/useRequest";
 import { useTranslations } from "next-intl";
 import useUserStore from "@/stores/userStore";
-import {GET_LOGIN_ROUTE} from "@/utils/apiRoutes";
+import { GET_LOGIN_ROUTE } from "@/utils/apiRoutes";
 import LoginContext from "@/components/login/LoginContext";
 
 export type LoginFormType = z.infer<ReturnType<typeof loginFormSchema>>;
@@ -40,7 +40,5 @@ export default function Login() {
         }
     }
 
-    return (
-        <LoginContext form={form} onSubmit={onSubmit} />
-    );
+    return <LoginContext form={form} onSubmit={onSubmit} />;
 }

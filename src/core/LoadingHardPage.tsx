@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
-import {Auth} from "@/assets";
+import { Auth } from "@/assets";
 
 type LoadingHardPageProps = {
     children?: ReactNode;

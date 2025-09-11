@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import useUserStore from "@/stores/userStore";
 import { useTranslations } from "next-intl";
-import {Auth} from "@/assets";
+import { Auth } from "@/assets";
 
 function WithoutAuthMiddleware({ children }: { children: React.ReactNode }) {
     const t = useTranslations("NotAuthMiddleware");

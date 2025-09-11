@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import {menuItems} from "@/utils/data";
-import {ArrowDown} from "lucide-react";
+import { menuItems } from "@/utils/data";
+import { ArrowDown } from "lucide-react";
 
 export default function Header() {
     const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -23,7 +23,6 @@ export default function Header() {
             }
         }
     }, [pathname]);
-
 
     return (
         <div>

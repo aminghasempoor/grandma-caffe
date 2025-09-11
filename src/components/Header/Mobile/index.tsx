@@ -1,6 +1,6 @@
 import { useSidebarStore } from "@/stores/SidebarStore";
 import React from "react";
-import {HamburgerIcon} from "lucide-react";
+import { HamburgerIcon } from "lucide-react";
 
 export default function Header() {
     const toggle = useSidebarStore((state) => state.toggle);
