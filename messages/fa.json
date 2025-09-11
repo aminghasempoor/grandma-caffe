@@ -1,5 +1,65 @@
 {
+  "authenticating": "درحال احراز هویت...",
   "HomePage": {
     "title": "سلام دنیا"
+  },
+  "Global": {
+    "appName": "منولیتا",
+    "back": "بازگشت",
+    "motto": "آسان تر از همیشه",
+    "loading": "لطفا منتظر بمانید...",
+    "language": "فا"
+  },
+  "AuthMiddleware": {
+    "title": "شما دسترسی لازم به این صفحه را ندارید..."
+  },
+  "NotAuthMiddleware": {
+    "title": "شما دسترسی لازم به این صفحه را دارید و نیاز به ورود مجدد نیست..."
+  },
+  "Loading": {
+    "title": "درحال احراز هویت..."
+  },
+  "Sidebar": {
+    "sidebar": "داشبورد",
+    "title": "داشبورد",
+    "home": "خانه",
+    "profile": "پروفایل",
+    "items": "آیتم ها",
+    "user-management": "مدیریت کاربران",
+    "logo": "منولیتا",
+    "customer_review": "نظرات مشتریان",
+    "unit": "هزار تومان",
+    "category": "دسته بندی ها",
+    "log_out": "خروج",
+    "settings": "تنظیمات",
+    "application": "برنامه",
+    "global_title": "منولیتا",
+    "footer": "پاورقی"
+  },
+  "Notifications": {
+    "code": "کد",
+    "error": "خطا",
+    "title": "درخواست شما ارسال شد",
+    "warning": "هشدار",
+    "success": "موفق",
+    "error_static_text": "عملیات شما با خطا مواجه شد",
+    "warning_static_text": "خطا سرور",
+    "success_static_text": "عملیات شما با موفقیت انجام شد",
+    "pending": "در حال انجام..."
+  },
+  "LoginPage": {
+    "title": "صفحه ورود",
+    "Required": "ضروری",
+    "error_max": "نمی تواند بیشتر از {max} ",
+    "phone_number": "شماره تلفن",
+    "password": "رمز عبور",
+    "submit": "تایید",
+    "minimum_character": "رمز عبور حداقل باید 6 کاراکتر باشد",
+    "login": "ورود",
+    "user_name": "نام کاربری",
+    "remember": "مرا به خاطر بسپار",
+    "forget": "فراموش کردی؟",
+    "noAccount": "اکانت نداری؟",
+    "createHere": "اینجا بساز!"
   }
 }

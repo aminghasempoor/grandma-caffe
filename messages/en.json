@@ -1,5 +1,64 @@
 {
+  "authenticating": "authenticating...",
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Global": {
+    "appName": "Bakery",
+    "back": "back",
+    "motto": "great out",
+    "loading": "loading...",
+    "language": "فا"
+  },
+  "AuthMiddleware": {
+    "title": "you don not have permission to this page..."
+  },
+  "NotAuthMiddleware": {
+    "title": "you have permission to this page don not need to login again..."
+  },
+  "Loading": {
+    "title": "Loading..."
+  },
+  "Sidebar": {
+    "sidebar": "sidebar",
+    "title": "dashboard",
+    "logo": "Menulita",
+    "user-management": "User Management",
+    "customer_review": "Customers Review",
+    "home": "Home",
+    "profile": "Profile",
+    "items": "Items",
+    "category": "Category",
+    "log_out": "Log Out",
+    "settings": "Settings",
+    "application": "Application",
+    "global_title": "menulita",
+    "footer": "Footer"
+  },
+  "Notifications": {
+    "code": "Code",
+    "title": "You're Request has been sent",
+    "error": "Error",
+    "warning": "Warning",
+    "success": "Success",
+    "error_static_text": "Your operation encountered an error",
+    "warning_static_text": "Server error",
+    "success_static_text": "Your operation was successful",
+    "pending": "pending..."
+  },
+  "LoginPage": {
+    "title": "Login Page",
+    "Required": "Required",
+    "error_max": "can not be more than {max}",
+    "phone_number": "Phone Number",
+    "password": "Password",
+    "submit": "Submit",
+    "user_name": "User Name",
+    "login": "Login",
+    "minimum_character": "Password should be at least 6 characters long",
+    "remember": "remember me",
+    "forget": "forgot everything?",
+    "noAccount": "no account?",
+    "createHere": "create here!"
   }
 }
