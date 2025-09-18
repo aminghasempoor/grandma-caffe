@@ -1,6 +1,6 @@
 "use client";
 import useUserStore from "@/stores/userStore";
-import WithAuthMiddleware from "@/components/middlewares/WithAuthMiddleware";
+// import WithAuthMiddleware from "@/components/middlewares/WithAuthMiddleware";
 import LoadingHardPage from "@/core/LoadingHardPage";
 import { useTranslations } from "next-intl";
 import React from "react";
