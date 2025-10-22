@@ -73,7 +73,34 @@ export const columns: ColumnDef<Discount>[] = [
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
                 >
-                    {formatted}٪
+                    {formatted}
+                </motion.div>
+            );
+        },
+    },
+    {
+        accessorKey: "expiration_date",
+        header: () => <div className="text-right font-semibold text-foreground px-5">تاریخ انقضا</div>,
+        cell: ({ row }) => {
+            const expirationDate = row.getValue("expiration_date") as string | undefined;
+
+            let formattedDate = "-";
+            if (expirationDate) {
+                const cleanDate = expirationDate.split(" ")[0];
+                const date = new Date(cleanDate + "T00:00:00");
+                if (!isNaN(date.getTime())) {
+                    formattedDate = date.toLocaleDateString("fa-IR");
+                }
+            }
+
+            return (
+                <motion.div
+                    className="text-right text-foreground font-medium px-5"
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                >
+                    {formattedDate}
                 </motion.div>
             );
         },
@@ -81,10 +108,12 @@ export const columns: ColumnDef<Discount>[] = [
     {
         id: "actions",
         header: () => <div className="text-right font-semibold text-foreground px-5">عملیات</div>,
-        cell: ({ row }) => (
-            <>
-                <RowActions discount={row.original} />
-            </>
-        ),
+        cell: ({ row }) => {
+            return (
+                <>
+                    <RowActions discount={row.original} />
+                </>
+            );
+        },
     },
 ];

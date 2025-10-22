@@ -43,6 +43,7 @@ export function AddDiscount() {
     };
     const t = useTranslations("ShowDiscount");
     const requestServer = useRequest({ auth: true, notification: true });
+    const requestServer2 = useRequest({ auth: true, notification: false });
     const fetchDiscounts = useDiscountStore((s) => s.fetchDiscounts);
     const [openEdit, setOpenEdit] = useState(false);
 
@@ -71,7 +72,7 @@ export function AddDiscount() {
                 data: { ...data },
             });
             setOpenEdit(false);
-            fetchDiscounts(requestServer);
+            fetchDiscounts(requestServer2);
         } catch (error) {
             console.log(error);
         }

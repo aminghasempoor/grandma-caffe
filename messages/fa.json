@@ -31,6 +31,24 @@
     "cancel": "بستن",
     "save_change": "ذخیره"
   },
+  "Settings": {
+    "title": "تنظیمات کاربر",
+    "user_name": "نام کاربری",
+    "required": "الزامی",
+    "email": "ایمیل",
+    "invalid_format" : "فرمت قابل قبول نیست",
+    "phone_number": "تلفن همراه",
+    "enter_phone_number": "تلفن همراه را وارد کنید",
+    "submit": "ذخیره تغییرات",
+    "success_msg" : "تنظیمات با موفقیت ذخیره شد",
+    "current_password" : "رمزعبور فعلی",
+    "new_password" : "رمزعبور جدید",
+    "confirm_password" : "تایید رمزعبور",
+    "password_changed_successfully" : "رمزعبور تغییر کرد",
+    "passwords_do_not_match" : "رمزعبور مطابقت ندارد",
+    "password_min_length" : "حداقل رمزعبور 6 کلمه میباشد",
+    "error_msg" : "خطا در ذخیره تنظیمات. لطفا دوباره تلاش کنید."
+  },
   "NotAuthMiddleware": {
     "title": "شما دسترسی لازم به این صفحه را دارید و نیاز به ورود مجدد نیست..."
   },

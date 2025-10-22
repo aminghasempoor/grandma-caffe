@@ -6,6 +6,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface User {
+    username: string;
     id: number;
     first_name: string | null;
     last_name: string | null;
@@ -43,6 +44,7 @@ interface UserStoreState {
 }
 
 const defaultUser: User = {
+    username: "",
     id: 0,
     first_name: null,
     last_name: null,
