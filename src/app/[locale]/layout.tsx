@@ -8,6 +8,8 @@ import React from "react";
 import localFont from "next/font/local";
 import DeviceProvider from "@/providers/DeviceProvider";
 import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "react-hot-toast";
+import InitUser from "@/hooks/InitUser";
 
 const doran = localFont({
     src: "../../fonts/Doran-Medium.woff2",
@@ -56,6 +58,8 @@ export default async function RootLayout(props: LocaleLayoutProps) {
                                 dark: "dark",
                             }}
                         >
+                            <Toaster />
+                            <InitUser />
                             {props.children}
                         </ThemeProvider>
                     </DeviceProvider>
