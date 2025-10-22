@@ -4,7 +4,7 @@ import { create } from "zustand";
 import { GET_DISCOUNT } from "@/utils/apiRoutes";
 
 interface ApiData {
-    id : number;
+    id: number;
     phone_number: string;
     expiration_date: string;
     name: string;
@@ -73,10 +73,7 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
             });
         } catch (err: any) {
             set({
-                error:
-                    err?.response?.data?.message ||
-                    err?.message ||
-                    "Error fetching discounts",
+                error: err?.response?.data?.message || err?.message || "Error fetching discounts",
                 loading: false,
             });
         }

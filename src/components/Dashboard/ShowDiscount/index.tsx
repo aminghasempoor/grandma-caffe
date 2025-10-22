@@ -13,14 +13,11 @@ export default function ShowDiscount() {
         fetchDiscounts(requestServer);
     }, [fetchDiscounts]);
 
-    if (loading)
-        return <p className="text-center text-gray-500 py-10">Loading...</p>;
+    if (loading) return <p className="text-center text-gray-500 py-10">Loading...</p>;
 
-    if (error)
-        return <p className="text-center text-red-500 py-10">{error}</p>;
+    if (error) return <p className="text-center text-red-500 py-10">{error}</p>;
 
-    if (!data || data.length === 0)
-        return <p className="text-center text-gray-500 py-10">No data available.</p>;
+    if (!data || data.length === 0) return <p className="text-center text-gray-500 py-10">No data available.</p>;
 
     const tableData: Discount[] = data.map((item: any) => ({
         id: item.id,

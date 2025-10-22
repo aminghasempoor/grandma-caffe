@@ -1,10 +1,7 @@
-import {AddDiscount} from "./AddDiscount";
+import { AddDiscount } from "./AddDiscount";
 
 const TableToolbar = () => {
-
-    return (
-        <AddDiscount />
-    );
+    return <AddDiscount />;
 };
 
 export default TableToolbar;

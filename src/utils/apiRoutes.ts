@@ -1,5 +1,5 @@
 export const api = process.env.NEXT_PUBLIC_API_URL;
-const basicURL = api + "/api"
+const basicURL = api + "/api";
 export const GET_USER_ROUTE = basicURL + "/profile/info";
 export const GET_LOGIN_ROUTE = basicURL + "/auth/login/";
 export const GET_LOGOUT_ROUTE = basicURL + "/log_out";

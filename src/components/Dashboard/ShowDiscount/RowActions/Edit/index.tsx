@@ -19,9 +19,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import useRequest from "@/hooks/useRequest";
 import { GET_DISCOUNT_DETAIL } from "@/utils/apiRoutes";
-import {RowActionsProps} from "@/components/Dashboard/ShowDiscount/RowActions";
+import { RowActionsProps } from "@/components/Dashboard/ShowDiscount/RowActions";
 import DatePickerField from "./DatePickerField";
-import {useDiscountStore} from "@/stores/useDiscount";
+import { useDiscountStore } from "@/stores/useDiscount";
 
 const EditUserSchema = z.object({
     invoice_amount: z.string().min(1, "مبلغ فاکتور الزامیست"),
@@ -36,7 +36,7 @@ export type EditUserFormValues = z.infer<typeof EditUserSchema>;
 const EditForm = ({ discount }: RowActionsProps) => {
     const t = useTranslations("ShowDiscount");
     const requestServer = useRequest({ auth: true, notification: true });
-    const fetchDiscounts  = useDiscountStore((s) => s.fetchDiscounts);
+    const fetchDiscounts = useDiscountStore((s) => s.fetchDiscounts);
     const [openEdit, setOpenEdit] = useState(false);
 
     const {
@@ -64,7 +64,7 @@ const EditForm = ({ discount }: RowActionsProps) => {
                 data: { ...data },
             });
             setOpenEdit(false);
-            fetchDiscounts(requestServer)
+            fetchDiscounts(requestServer);
         } catch (error) {
             console.log(error);
         }
@@ -126,9 +126,7 @@ const EditForm = ({ discount }: RowActionsProps) => {
                         label={t("expiration_date")}
                         setValue={setValue}
                     />
-                    {errors.expiration_date && (
-                        <p className="text-sm text-red-500">{errors.expiration_date.message}</p>
-                    )}
+                    {errors.expiration_date && <p className="text-sm text-red-500">{errors.expiration_date.message}</p>}
                     <div className="flex justify-end gap-2 pt-4">
                         <Button type="button" variant="ghost" onClick={() => setOpenEdit(false)}>
                             {t("cancel")}

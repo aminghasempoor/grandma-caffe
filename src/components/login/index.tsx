@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import useUserStore from "@/stores/userStore";
 import { GET_LOGIN_ROUTE } from "@/utils/apiRoutes";
 import LoginContext from "@/components/login/LoginContext";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export type LoginFormType = z.infer<ReturnType<typeof loginFormSchema>>;
 export default function Login() {

@@ -17,9 +17,7 @@ export type Discount = {
 export const columns: ColumnDef<Discount>[] = [
     {
         accessorKey: "id",
-        header: () => (
-            <div className="text-right font-semibold text-foreground px-5">آیدی</div>
-        ),
+        header: () => <div className="text-right font-semibold text-foreground px-5">آیدی</div>,
         cell: ({ row }) => (
             <motion.div
                 className="text-right text-foreground px-5"
@@ -33,9 +31,7 @@ export const columns: ColumnDef<Discount>[] = [
     },
     {
         accessorKey: "name",
-        header: () => (
-            <div className="text-right font-semibold text-foreground px-5">نام</div>
-        ),
+        header: () => <div className="text-right font-semibold text-foreground px-5">نام</div>,
         cell: ({ row }) => (
             <motion.div
                 className="text-right font-medium text-foreground px-5"
@@ -49,9 +45,7 @@ export const columns: ColumnDef<Discount>[] = [
     },
     {
         accessorKey: "phone_number",
-        header: () => (
-            <div className="text-right font-semibold text-foreground px-5">شماره تلفن</div>
-        ),
+        header: () => <div className="text-right font-semibold text-foreground px-5">شماره تلفن</div>,
         cell: ({ row }) => (
             <motion.div
                 className="text-right text-foreground px-5"
@@ -65,11 +59,7 @@ export const columns: ColumnDef<Discount>[] = [
     },
     {
         accessorKey: "discount_amount",
-        header: () => (
-            <div className="text-right font-semibold text-foreground px-5">
-                مقدار تخفیف
-            </div>
-        ),
+        header: () => <div className="text-right font-semibold text-foreground px-5">مقدار تخفیف</div>,
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("discount_amount"));
             const formatted = new Intl.NumberFormat("fa-IR", {
@@ -90,11 +80,7 @@ export const columns: ColumnDef<Discount>[] = [
     },
     {
         id: "actions",
-        header: () => (
-            <div className="text-right font-semibold text-foreground px-5">
-                عملیات
-            </div>
-        ),
+        header: () => <div className="text-right font-semibold text-foreground px-5">عملیات</div>,
         cell: ({ row }) => (
             <>
                 <RowActions discount={row.original} />

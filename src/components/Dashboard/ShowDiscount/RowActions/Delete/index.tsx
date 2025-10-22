@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import useRequest from "@/hooks/useRequest";
 import { DELETE_DISCOUNT } from "@/utils/apiRoutes";
-import {RowActionsProps} from "@/components/Dashboard/ShowDiscount/RowActions";
+import { RowActionsProps } from "@/components/Dashboard/ShowDiscount/RowActions";
 
 const DeleteForm = ({ discount }: RowActionsProps) => {
     const t = useTranslations("ShowDiscount");

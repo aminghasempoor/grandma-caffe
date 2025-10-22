@@ -1,25 +1,25 @@
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 import useRequest from "@/hooks/useRequest";
-import {useState} from "react";
-import {useForm} from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {GET_DISCOUNT_DETAIL} from "@/utils/apiRoutes";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { GET_DISCOUNT_DETAIL } from "@/utils/apiRoutes";
 import {
     Dialog,
     DialogContent,
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger
+    DialogTrigger,
 } from "@/components/ui/dialog";
-import {Button} from "@/components/ui/button";
-import {motion} from "framer-motion";
-import {Label} from "@/components/ui/label";
-import {Input} from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import DatePickerField from "../RowActions/Edit/DatePickerField";
-import {z} from "zod";
-import {Plus} from "lucide-react";
-import {useDiscountStore} from "@/stores/useDiscount";
+import { z } from "zod";
+import { Plus } from "lucide-react";
+import { useDiscountStore } from "@/stores/useDiscount";
 
 const EditUserSchema = z.object({
     invoice_amount: z.string().min(1, "مبلغ فاکتور الزامیست"),
@@ -31,7 +31,7 @@ const EditUserSchema = z.object({
 
 export type EditUserFormValues = z.infer<typeof EditUserSchema>;
 
-export function AddDiscount (){
+export function AddDiscount() {
     const discount = {
         id: "",
         phone_number: "",
@@ -39,11 +39,11 @@ export function AddDiscount (){
         invoice_amount: "",
         discount_amount: "",
         discount_percentage: "",
-        expiration_date : ""
-    }
+        expiration_date: "",
+    };
     const t = useTranslations("ShowDiscount");
     const requestServer = useRequest({ auth: true, notification: true });
-    const fetchDiscounts  = useDiscountStore((s) => s.fetchDiscounts);
+    const fetchDiscounts = useDiscountStore((s) => s.fetchDiscounts);
     const [openEdit, setOpenEdit] = useState(false);
 
     const {
@@ -71,7 +71,7 @@ export function AddDiscount (){
                 data: { ...data },
             });
             setOpenEdit(false);
-            fetchDiscounts(requestServer)
+            fetchDiscounts(requestServer);
         } catch (error) {
             console.log(error);
         }
@@ -134,9 +134,7 @@ export function AddDiscount (){
                         label={t("expiration_date")}
                         setValue={setValue}
                     />
-                    {errors.expiration_date && (
-                        <p className="text-sm text-red-500">{errors.expiration_date.message}</p>
-                    )}
+                    {errors.expiration_date && <p className="text-sm text-red-500">{errors.expiration_date.message}</p>}
                     <div className="flex justify-end gap-2 pt-4">
                         <Button type="button" variant="ghost" onClick={() => setOpenEdit(false)}>
                             {t("cancel")}

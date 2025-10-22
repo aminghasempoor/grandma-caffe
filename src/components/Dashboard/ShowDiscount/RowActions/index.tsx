@@ -1,5 +1,5 @@
 "use client";
-import {Discount} from "../Columns";
+import { Discount } from "../Columns";
 import DeleteForm from "./Delete";
 import EditForm from "./Edit";
 
