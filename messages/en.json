@@ -31,6 +31,24 @@
     "cancel": "Cancel",
     "save_change": "Save Change"
   },
+  "Settings": {
+    "title": "Settings",
+    "user_name": "Username",
+    "required": "Required",
+    "email": "Email",
+    "invalid_format": "Invalid Format",
+    "phone_number": "Phone Number",
+    "enter_phone_number": "Enter Phone Number",
+    "submit": "Submit",
+    "success_msg" : "Successfully Saved",
+    "current_password" : "Current Password",
+    "new_password" : "New Password",
+    "confirm_password" : "Confirm Password",
+    "password_min_length" : "Password Min Length is 6 Character",
+    "password_changed_successfully" : "Password Changed Successfully",
+    "passwords_do_not_match" : "Passwords Do Not Match",
+    "error_msg" : "Error Saving Data"
+  },
   "NotAuthMiddleware": {
     "title": "you have permission to this page don not need to login again..."
   },

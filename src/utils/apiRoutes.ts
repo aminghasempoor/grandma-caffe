@@ -6,3 +6,4 @@ export const GET_LOGOUT_ROUTE = basicURL + "/log_out";
 export const GET_DISCOUNT = basicURL + "/discounts";
 export const GET_DISCOUNT_DETAIL = basicURL + "/discounts";
 export const DELETE_DISCOUNT = basicURL + "/discounts";
+export const CHANGE_PASSWORD = basicURL + "/profile/change_password";

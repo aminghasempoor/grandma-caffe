@@ -1,23 +1,28 @@
 "use client";
-import { useEffect } from "react";
-import { useDiscountStore } from "@/stores/useDiscount";
+import {useEffect} from "react";
+import {useDiscountStore} from "@/stores/useDiscount";
 import useRequest from "@/hooks/useRequest";
-import { DataTable } from "./DataTable";
-import { columns, Discount } from "./Columns";
+import {DataTable} from "./DataTable";
+import {columns, Discount} from "./Columns";
+import DataTableFallback from "./DataTableFallBack";
 
 export default function ShowDiscount() {
-    const { data, loading, error, fetchDiscounts } = useDiscountStore();
-    const requestServer = useRequest({ auth: true, notification: false });
+    const {data, loading, error, fetchDiscounts} = useDiscountStore();
+    const requestServer = useRequest({auth: true, notification: false});
 
     useEffect(() => {
         fetchDiscounts(requestServer);
     }, [fetchDiscounts]);
 
-    if (loading) return <p className="text-center text-gray-500 py-10">Loading...</p>;
-
-    if (error) return <p className="text-center text-red-500 py-10">{error}</p>;
-
-    if (!data || data.length === 0) return <p className="text-center text-gray-500 py-10">No data available.</p>;
+    if (loading) return <DataTableFallback
+        type={"loading"}
+        rowCount={5}
+    />;
+    if (error) return <DataTableFallback
+        type={"error"}
+        message={error}
+        rowCount={5}
+    />;
 
     const tableData: Discount[] = data.map((item: any) => ({
         id: item.id,
@@ -25,11 +30,12 @@ export default function ShowDiscount() {
         name: item.name,
         invoice_amount: item.invoice_amount,
         discount_amount: item.discount_amount,
+        expiration_date: item.expiration_date,
     }));
 
     return (
         <div className="container mx-auto py-10">
-            <DataTable columns={columns} data={tableData} />
+            <DataTable columns={columns} data={tableData}/>
         </div>
     );
 }
