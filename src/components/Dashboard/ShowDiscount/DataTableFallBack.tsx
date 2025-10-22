@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { columns } from "./Columns"; // ستون‌ها
 
 interface Props {
     type: "loading" | "error";

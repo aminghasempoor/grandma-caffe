@@ -109,10 +109,11 @@ export const columns: ColumnDef<Discount>[] = [
         id: "actions",
         header: () => <div className="text-right font-semibold text-foreground px-5">عملیات</div>,
         cell: ({ row }) => {
-            return <>
-                <RowActions discount={row.original}/>
-            </>
-        }
-        ,
+            return (
+                <>
+                    <RowActions discount={row.original} />
+                </>
+            );
+        },
     },
 ];

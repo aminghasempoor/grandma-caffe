@@ -6,7 +6,7 @@ import useUserStore from "@/stores/userStore";
 import { useTranslations } from "next-intl";
 import useRequest from "@/hooks/useRequest";
 import { CHANGE_PASSWORD } from "@/utils/apiRoutes";
-import {Input} from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 
 interface PasswordForm {
     current_password: string;
@@ -95,11 +95,7 @@ export default function UserSettings() {
                         rules={{ required: t("required") }}
                         render={({ field, fieldState }) => (
                             <>
-                                <Input
-                                    {...field}
-                                    id="current_password"
-                                    type="password"
-                                />
+                                <Input {...field} id="current_password" type="password" />
                                 {fieldState.error && (
                                     <p className="text-red-600 text-sm mt-1">{fieldState.error.message}</p>
                                 )}
@@ -121,11 +117,7 @@ export default function UserSettings() {
                         }}
                         render={({ field, fieldState }) => (
                             <>
-                                <Input
-                                    {...field}
-                                    id="new_password"
-                                    type="password"
-                                />
+                                <Input {...field} id="new_password" type="password" />
                                 {fieldState.error && (
                                     <p className="text-red-600 text-sm mt-1">{fieldState.error.message}</p>
                                 )}
@@ -144,11 +136,7 @@ export default function UserSettings() {
                         rules={{ required: t("required") }}
                         render={({ field, fieldState }) => (
                             <>
-                                <Input
-                                    {...field}
-                                    id="confirm_password"
-                                    type="password"
-                                />
+                                <Input {...field} id="confirm_password" type="password" />
                                 {fieldState.error && (
                                     <p className="text-red-600 text-sm mt-1">{fieldState.error.message}</p>
                                 )}

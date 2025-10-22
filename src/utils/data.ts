@@ -1,4 +1,4 @@
-import { Home, Inbox, Settings} from "lucide-react";
+import { Home, Inbox, Settings } from "lucide-react";
 
 export function getDashboardSidebarItems(t: (key: string) => string) {
     return [
