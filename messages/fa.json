@@ -13,6 +13,24 @@
   "AuthMiddleware": {
     "title": "شما دسترسی لازم به این صفحه را ندارید..."
   },
+  "ShowDiscount" : {
+    "previous": "قبلی",
+    "next": "بعدی",
+    "delete": "حذف کاربر",
+    "delete_description": "آیا از حذف کاربر «{username}» مطمئن هستید؟",
+    "edit": "ویرایش",
+    "add": "اضافه کردن",
+    "edit_description": "ویرایش اطلاعات",
+    "add_description": "اضافه کردن اطلاعات",
+    "phone_number": "شماره تلفن: ",
+    "name" : "نام: ",
+    "invoice_amount" : "مبلغ فاکتور: ",
+    "discount_amount" : "مقدار تخفیف: ",
+    "discount_percentage" : "درصد تخفیف: ",
+    "expiration_date" : "تاریخ انقضا: ",
+    "cancel": "بستن",
+    "save_change": "ذخیره"
+  },
   "NotAuthMiddleware": {
     "title": "شما دسترسی لازم به این صفحه را دارید و نیاز به ورود مجدد نیست..."
   },

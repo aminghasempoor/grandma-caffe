@@ -7,6 +7,7 @@ import useRequest from "@/hooks/useRequest";
 import { GET_LOGOUT_ROUTE } from "@/utils/apiRoutes";
 import useUserStore from "@/stores/userStore";
 import { useRouter } from "next/navigation";
+import {ModeToggle} from "@/core/ToggeTheme";
 
 const SidebarFooterComponent = () => {
     const t = useTranslations("Sidebar");
@@ -24,6 +25,9 @@ const SidebarFooterComponent = () => {
     };
     return (
         <SidebarFooter>
+            <SidebarMenu className="hover:bg-none">
+                <ModeToggle />
+            </SidebarMenu>
             <SidebarMenu>
                 <SidebarMenuButton asChild className={"p-0"}>
                     <Button

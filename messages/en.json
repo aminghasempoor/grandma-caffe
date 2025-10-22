@@ -13,6 +13,24 @@
   "AuthMiddleware": {
     "title": "you don not have permission to this page..."
   },
+  "ShowDiscount" : {
+    "previous": "Previous",
+    "next": "Next",
+    "delete": "Delete",
+    "delete_description": "Are you sure Deleting : «{username}»",
+    "edit": "Edit",
+    "add": "Add",
+    "edit_description": "Edit User Info",
+    "add_description": "Add User Info",
+    "phone_number": "Phone: ",
+    "name" : "Name: ",
+    "invoice_amount" : "Invoice Amount: ",
+    "discount_amount" : "Discount Amount: ",
+    "discount_percentage" : "Discount Percentage: ",
+    "expiration_date" : "Expiration Date: ",
+    "cancel": "Cancel",
+    "save_change": "Save Change"
+  },
   "NotAuthMiddleware": {
     "title": "you have permission to this page don not need to login again..."
   },

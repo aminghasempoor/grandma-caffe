@@ -17,8 +17,8 @@ export const ThemeToggleButton3 = ({ className = "" }: { className?: string }) =
             type="button"
             onClick={handleToggle}
             className={cn(
-                "rounded-full transition-all duration-300 active:scale-95",
-                isDark ? "bg-black text-white" : "bg-white text-black",
+                "rounded-full transition-all duration-300 active:scale-95 mx-1.5",
+                isDark ? "text-white" : "bg-white text-black",
                 className
             )}
         >
