@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { useForm, SubmitHandler } from "react-hook-form"
-import { motion } from "framer-motion"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Search } from "lucide-react"
-import useRequest from "@/hooks/useRequest"
-import { useDiscountStore } from "@/stores/useDiscount"
+import { useForm, SubmitHandler } from "react-hook-form";
+import { motion } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
+import useRequest from "@/hooks/useRequest";
+import { useDiscountStore } from "@/stores/useDiscount";
 
 type SearchFormValues = {
-    query: string
-}
+    query: string;
+};
 
 const SearchComponent = () => {
-    const requestServer = useRequest({ auth: true, notification: true })
+    const requestServer = useRequest({ auth: true, notification: true });
     const { register, handleSubmit, watch } = useForm<SearchFormValues>({
         defaultValues: { query: "" },
-    })
-    const setFilters = useDiscountStore((state) => state.setFilters)
+    });
+    const setFilters = useDiscountStore((state) => state.setFilters);
 
     // 👀 مقدار ورودی را مشاهده می‌کنیم
-    const queryValue = watch("query")
+    const queryValue = watch("query");
 
     const onSubmit: SubmitHandler<SearchFormValues> = async (data) => {
-        if (!data.query.trim()) return // در صورت خالی بودن، کاری نکن
+        if (!data.query.trim()) return; // در صورت خالی بودن، کاری نکن
         const filters = [
             {
                 id: "phone_number",
                 value: data.query.trim(),
             },
-        ]
-        await setFilters(filters, requestServer)
-    }
+        ];
+        await setFilters(filters, requestServer);
+    };
 
     return (
         <motion.form
@@ -42,11 +42,7 @@ const SearchComponent = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex items-center gap-2"
         >
-            <Input
-                placeholder="جست‌وجو..."
-                {...register("query")}
-                className="w-64"
-            />
+            <Input placeholder="جست‌وجو..." {...register("query")} className="w-64" />
 
             <Button
                 className="cursor-pointer"
@@ -58,7 +54,7 @@ const SearchComponent = () => {
                 <Search className="h-5 w-5" />
             </Button>
         </motion.form>
-    )
-}
+    );
+};
 
-export default SearchComponent
+export default SearchComponent;
