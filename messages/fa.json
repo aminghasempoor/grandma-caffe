@@ -17,6 +17,7 @@
     "previous": "قبلی",
     "next": "بعدی",
     "delete": "حذف تخفیف",
+    "deleting": "درحال حذف ...",
     "delete_description": "آیا از حذف تخفیف «{username}» مطمئن هستید؟",
     "edit": "ویرایش",
     "add": "اضافه کردن",
