@@ -27,7 +27,7 @@ interface ApiStore {
     setStart: (start: number) => void;
     setFilters: (filters: any[], requestServer?: any) => Promise<void>;
     setSorting: (sorting: any[]) => void;
-    resetFilters: (requestServer?:any) => Promise<void>;
+    resetFilters: (requestServer?: any) => Promise<void>;
 }
 
 export const useDiscountStore = create<ApiStore>((set, get) => ({
@@ -105,10 +105,9 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
             start: 0,
             filters: [],
             sorting: [],
-        })
+        });
         if (requestServer) {
             await get().fetchDiscounts(requestServer);
         }
-    }
-
+    },
 }));

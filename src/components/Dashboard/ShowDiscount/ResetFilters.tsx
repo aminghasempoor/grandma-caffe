@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import {Button} from "@/components/ui/button";
-import {useDiscountStore} from "@/stores/useDiscount";
+import { Button } from "@/components/ui/button";
+import { useDiscountStore } from "@/stores/useDiscount";
 import useRequest from "@/hooks/useRequest";
 
 const ResetFilters = () => {

@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import useRequest from "@/hooks/useRequest";
 import { DELETE_DISCOUNT } from "@/utils/apiRoutes";
 import { RowActionsProps } from "@/components/Dashboard/ShowDiscount/RowActions";
-import {useDiscountStore} from "@/stores/useDiscount";
+import { useDiscountStore } from "@/stores/useDiscount";
 
 const DeleteForm = ({ discount }: RowActionsProps) => {
     const t = useTranslations("ShowDiscount");

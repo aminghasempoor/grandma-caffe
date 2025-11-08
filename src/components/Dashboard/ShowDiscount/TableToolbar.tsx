@@ -1,4 +1,4 @@
-import {AddDiscount} from "./AddDiscount";
+import { AddDiscount } from "./AddDiscount";
 import SearchComponent from "./SearchComponent";
 import ResetFilters from "@/components/Dashboard/ShowDiscount/ResetFilters";
 
@@ -6,11 +6,11 @@ const TableToolbar = () => {
     return (
         <div className={"flex items-center justify-between "}>
             <div className={"flex items-center justify-start gap-5"}>
-                <AddDiscount/>
-                <SearchComponent/>
+                <AddDiscount />
+                <SearchComponent />
             </div>
             <div>
-                <ResetFilters/>
+                <ResetFilters />
             </div>
         </div>
     );
