@@ -25,7 +25,7 @@ interface ApiStore {
     fetchDiscounts: (requestServer: any) => Promise<void>;
     setSize: (size: number) => void;
     setStart: (start: number) => void;
-    setFilters: (filters: any[]) => void;
+    setFilters: (filters: any[], requestServer?: any) => Promise<void>;
     setSorting: (sorting: any[]) => void;
     resetFilters: () => void;
 }
@@ -41,17 +41,24 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
     filters: [],
     sorting: [],
 
-    // ✅ build query like /api/discounts?size=5&start=0&filters=[]&sorting=[]
     fetchDiscounts: async (requestServer) => {
         set({ loading: true, error: null });
 
         try {
             const { size, start, filters, sorting } = get();
 
+            // ✅ آماده‌سازی فیلترها با ساختار درست
+            const preparedFilters = filters.map((f) => ({
+                id: f.id,
+                fn: f.fn || "contains",
+                datatype: f.datatype || "numeric",
+                value: f.value, // اگر عدد بود به عدد تبدیل کن
+            }));
+
             const params = new URLSearchParams();
             params.append("size", String(size));
             params.append("start", String(start));
-            params.append("filters", JSON.stringify(filters));
+            params.append("filters", JSON.stringify(preparedFilters));
             params.append("sorting", JSON.stringify(sorting));
 
             const url = `${GET_DISCOUNT}?${params.toString()}`;
@@ -81,7 +88,15 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
 
     setSize: (size) => set({ size }),
     setStart: (start) => set({ start }),
-    setFilters: (filters) => set({ filters }),
+
+    // ✅ هر بار که setFilters صدا زده می‌شود، fetchDiscounts هم اجرا می‌شود
+    setFilters: async (filters, requestServer) => {
+        set({ filters });
+        if (requestServer) {
+            await get().fetchDiscounts(requestServer);
+        }
+    },
+
     setSorting: (sorting) => set({ sorting }),
 
     resetFilters: () =>

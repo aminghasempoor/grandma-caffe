@@ -16,8 +16,8 @@
   "ShowDiscount" : {
     "previous": "قبلی",
     "next": "بعدی",
-    "delete": "حذف کاربر",
-    "delete_description": "آیا از حذف کاربر «{username}» مطمئن هستید؟",
+    "delete": "حذف تخفیف",
+    "delete_description": "آیا از حذف تخفیف «{username}» مطمئن هستید؟",
     "edit": "ویرایش",
     "add": "اضافه کردن",
     "edit_description": "ویرایش اطلاعات",
