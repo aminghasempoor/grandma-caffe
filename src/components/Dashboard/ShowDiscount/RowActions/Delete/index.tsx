@@ -15,11 +15,13 @@ import { motion } from "framer-motion";
 import useRequest from "@/hooks/useRequest";
 import { DELETE_DISCOUNT } from "@/utils/apiRoutes";
 import { RowActionsProps } from "@/components/Dashboard/ShowDiscount/RowActions";
+import {useDiscountStore} from "@/stores/useDiscount";
 
 const DeleteForm = ({ discount }: RowActionsProps) => {
     const t = useTranslations("ShowDiscount");
     const requestServer = useRequest({ auth: true, notification: true });
     const [openDelete, setOpenDelete] = useState(false);
+    const fetchDiscounts = useDiscountStore((s) => s.fetchDiscounts);
     const [loading, setLoading] = useState(false);
 
     const handleDelete = async () => {
@@ -27,6 +29,7 @@ const DeleteForm = ({ discount }: RowActionsProps) => {
             setLoading(true);
             await requestServer(`${DELETE_DISCOUNT}/${discount.id}`, "delete");
             setOpenDelete(false);
+            fetchDiscounts(requestServer);
         } catch (error) {
             console.log("Delete error:", error);
         } finally {

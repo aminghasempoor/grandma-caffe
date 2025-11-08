@@ -17,6 +17,7 @@
     "previous": "Previous",
     "next": "Next",
     "delete": "Delete Discount",
+    "deleting": "Deleting",
     "delete_description": "Are you sure Deleting : «{username}»",
     "edit": "Edit",
     "add": "Add",
