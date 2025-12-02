@@ -6,6 +6,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import TableToolbar from "./TableToolbar";
+import {useDiscountStore} from "@/stores/useDiscount";
+import useRequest from "@/hooks/useRequest";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -14,6 +16,9 @@ interface DataTableProps<TData, TValue> {
 
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
     const t = useTranslations("ShowDiscount");
+    const requestServer = useRequest({auth : true, notification : true});
+    const { nextPage, previousPage, start, size, total } = useDiscountStore();
+
     const table = useReactTable({
         data,
         columns,
@@ -65,12 +70,18 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                 <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => table.previousPage()}
-                    disabled={!table.getCanPreviousPage()}
+                    onClick={() => previousPage(requestServer)}
+                    disabled={start === 0}
                 >
                     {t("previous")}
                 </Button>
-                <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
+
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => nextPage(requestServer)}
+                    disabled={start + size >= total}
+                >
                     {t("next")}
                 </Button>
             </div>

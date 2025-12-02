@@ -22,6 +22,9 @@ interface ApiStore {
     filters: any[];
     sorting: any[];
 
+    nextPage: (requestServer: any) => Promise<void>;
+    previousPage: (requestServer: any) => Promise<void>;
+
     fetchDiscounts: (requestServer: any) => Promise<void>;
     setSize: (size: number) => void;
     setStart: (start: number) => void;
@@ -75,7 +78,7 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
 
             set({
                 data: json.data || [],
-                total: json.total || 0,
+                total: json.meta.totalRowCount || 0,
                 loading: false,
             });
         } catch (err: any) {
@@ -95,6 +98,25 @@ export const useDiscountStore = create<ApiStore>((set, get) => ({
         if (requestServer) {
             await get().fetchDiscounts(requestServer);
         }
+    },
+    nextPage: async (requestServer: any) => {
+        const { start, size, total } = get();
+
+        const newStart = start + size;
+        if (newStart >= total) return; // اگر صفحه بعدی وجود ندارد
+
+        set({ start: newStart });
+        await get().fetchDiscounts(requestServer);
+    },
+
+    previousPage: async (requestServer: any) => {
+        const { start, size } = get();
+
+        const newStart = start - size;
+        if (newStart < 0) return; // اگر صفحه قبلی وجود ندارد
+
+        set({ start: newStart });
+        await get().fetchDiscounts(requestServer);
     },
 
     setSorting: (sorting) => set({ sorting }),
