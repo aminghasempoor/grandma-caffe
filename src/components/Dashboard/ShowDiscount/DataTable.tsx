@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import TableToolbar from "./TableToolbar";
-import {useDiscountStore} from "@/stores/useDiscount";
+import { useDiscountStore } from "@/stores/useDiscount";
 import useRequest from "@/hooks/useRequest";
 
 interface DataTableProps<TData, TValue> {
@@ -16,7 +16,7 @@ interface DataTableProps<TData, TValue> {
 
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
     const t = useTranslations("ShowDiscount");
-    const requestServer = useRequest({auth : true, notification : true});
+    const requestServer = useRequest({ auth: true, notification: true });
     const { nextPage, previousPage, start, size, total } = useDiscountStore();
 
     const table = useReactTable({
@@ -67,12 +67,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                 </Table>
             </div>
             <div className="flex gap-x-5 items-center justify-end space-x-2 py-4">
-                <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => previousPage(requestServer)}
-                    disabled={start === 0}
-                >
+                <Button variant="outline" size="sm" onClick={() => previousPage(requestServer)} disabled={start === 0}>
                     {t("previous")}
                 </Button>
 
